@@ -1,0 +1,160 @@
+﻿用户接口：
+
+注册：
+	接口：/api/user/register
+	请求方式：POST
+	请求参数：
+		username - 用户名
+		password - 密码
+		sex      -性别
+		tell    -电话
+		type -用户类型
+	返回JSON：
+		{
+			"res_code" : 1, // 1表示注册成功，否则失败
+			"res_error" : "", // 失败时的错误信息
+			"res_body" : { // 响应主体
+				"data" : {
+					"username": "xxx", // 用户名
+				}
+			}
+		}
+
+
+登录：
+	接口：/api/user/login
+	请求方式：POST
+	请求参数：
+		username
+		password
+	返回JSON：
+		{
+			"res_code" : 1, // 1表示登录成功，否则失败
+			"res_error" : "", // 失败时的错误信息
+			"res_body" : { // 响应主体
+				"data" : {
+					"username": "xxx", // 用户名
+					"reg_time": "" // 注册时间
+				}
+			}
+	}
+
+注销：
+	接口：/api/user/logout
+	请求方式：GET
+	请求参数：
+	返回JSON：
+		{
+			"res_code" : 1, // 1表示注销成功，否则失败
+			"res_error" : "", // 失败时的错误信息
+			"res_body" : { // 响应主体
+				"status" : true // 注销成功还是失败   true成功
+			}
+		}
+
+
+==========================================================
+账单管理
+
+添加订单：
+	接口：/api/order/add
+	请求方式：post
+	请求参数：
+		name -商品名称
+		number -商品数量
+		total_amount -总金额
+		supplier -供应商
+		type -是否付款
+	返回json:
+		{
+			"res_code" : 1, // 1表示发布成功，否则失败
+			"res_error" : "", // 失败时的错误信息
+			"res_body" : { // 响应主体
+				"data" : {
+					"_id" : " - 主键值",
+					name -商品名称
+					number -商品数量
+					total_amount -总金额
+					supplier -供应商
+					type -是否付款
+					add_time -创建时间
+				}
+			}
+		}
+		
+	
+修改订单：
+	接口：/api/order/update
+	请求方式：POST
+	请求参数：
+		"_id" : " - 主键值",
+		name -商品名称
+		number -商品数量
+		total_amount -总金额
+		supplier -供应商
+		type -是否付款
+	返回JSON：
+		{
+			"res_code" : 1, // 1表示修改成功，否则失败
+			"res_error" : "", // 失败时的错误信息
+			"res_body" : { // 响应主体
+				"data" : {
+					"_id" : " - 主键值",
+					name -商品名称
+					number -商品数量
+					total_amount -总金额
+					supplier -供应商
+					type -是否付款
+					add_time -创建时间
+				}
+			}
+		}
+
+删除订单：
+	接口：/api/order/delete
+	请求方式：GET
+	请求参数：
+		_id - 待删除订单的主键值
+	返回JSON：
+		{
+			"res_code" : 1, // 1表示修改成功，否则失败
+			"res_error" : "", // 失败时的错误信息
+			"res_body" : { // 响应主体
+				"status" : true // 删除成功/失败
+			}
+		}
+
+查询职位：
+	接口：/api/order/find
+	请求方式：GET
+	请求参数：
+		name - 商品名称
+		supplier -供应商
+		type -是否付款
+	返回JSON：
+		{
+			"res_code" : 1, // 1表示查询成功，否则失败
+			"res_error" : "", // 失败时的错误信息
+			"res_body" : { // 响应主体
+				"data" : [
+					{
+						"_id" : " - 主键值",
+						name -商品名称
+						number -商品数量
+						total_amount -总金额
+						supplier -供应商
+						type -是否付款
+						add_time -创建时间
+						},
+					{
+						"_id" : " - 主键值",
+						name -商品名称
+						number -商品数量
+						total_amount -总金额
+						supplier -供应商
+						type -是否付款
+						add_time -创建时间
+					},...
+				]
+			}
+		}

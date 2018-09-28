@@ -1,0 +1,20 @@
+.right{
+	width:77%;
+	margin-left:265px;
+}
+.container{
+	width:969px;
+	margin-top:10px;
+}
+table{
+	text-align: center;
+}
+table thead th{
+	text-align: center;
+}
+.addUser{
+	position: absolute;
+	top:140px;
+	right:551px;
+	
+}

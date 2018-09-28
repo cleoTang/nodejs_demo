@@ -1,0 +1,54 @@
+body{
+  padding:0px;
+  margin:0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+ 
+}
+ul li{ list-style:none;}
+a {
+  color: white;
+}
+
+.logo{
+	float: left;
+	font-size: 20px;
+	color: white;
+	background-color: cornflowerblue;
+	border: none;
+	height:50px;
+}
+.btn-index{
+	float: right;
+	line-height:20px;
+}
+.time{
+	padding:0;
+	background-color: white;
+	border-color:gainsboro;
+	height:30px;
+	margin-top: -20px;
+	padding-left:20px;
+	padding-top:5px;
+}
+.nav-menu{
+	width: 240px;
+	height: 520px;
+	background: #F5F5F5;
+	border-right: 1px solid #DCDCDC;
+	overflow: hidden;
+	position: relative;
+	top:-20px;
+	float: left;
+}
+.nav-menu img{
+	position: absolute;
+	left:15px;
+	top:8px;
+}
+.list-group{
+	margin: 25px;
+	width: 180px;
+	text-align: center;
+}
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>账单管理-超市账单管理系统</title>
+		<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/order.css" />
+	</head>
+	<body>
+		<!--头部-->
+		<header></header>
+		
+		<!--内容-->
+		<div>
+			<!--侧边导航-->
+			<div class="nav-menu"></div>
+			<div class="right">
+				<!--提示框-->
+				<div class="alert alert-info" role="alert">
+					<img src="/images/home.png" alt="" />
+					你现在所在的页面：</div>
+				<!--查询导航-->
+				<form class="form-inline">
+				  <div class="form-group">
+				    <label for="exampleInputName2">商品名称：</label>
+				    <input type="text" class="form-control" id="exampleInputName2" placeholder="请输入商品名称">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputEmail2">供应商：</label>
+				   <input type="text" class="form-control" id="exampleInputName2" placeholder="请输入商品名称">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputEmail2">是否付款：</label>
+				   <input type="text" class="form-control" id="exampleInputName2" placeholder="请输入商品名称">
+				  </div>
+				  <button type="submit" class="btn btn-default">查询</button>
+				   <button type="submit" class="btn btn-default">添加订单</button>
+				</form>
+				
+				<!--内容表格-->
+				
+				<!--内容表格-->
+				<div class="container">
+					<div class="row">
+						<table class="table table-bordered message-table">
+						  <thead>
+						  	<th>账单编号</th>
+						  	<th>商品名称</th>
+						  	<th>商品单位</th>
+						  	<th>供应商</th>
+						  	<th>数量</th>
+						  	<th>账单金额</th>
+						  	<th>是否付款</th>
+						  	<th>创建时间</th>
+						  	<th>操作</th>
+						  </thead>
+						  <tbody>
+						  	<tr>
+						  		<td>1</td>
+							  	<td>1</td>
+							  	<td>1</td>
+							  	<td>1</td>
+							  	<td>1</td>
+							  	<td>1</td>
+							  	<td>1</td>
+							  	<td>1</td>
+							  	<td>
+							  		<a href="javascript:;" class="position-update" data-toggle="modal" data-target="#modifyModal"><img src="/images/updata.png" alt="" /></a>
+							  		<a  class="position-del" href="javascript:;"><img src="/images/schu.png" alt="" /></a>
+							  	</td>
+						  	</tr>
+						  
+						  </tbody>
+						</table>
+					</div>
+				</div>
+				
+			</div>
+					
+		</div>
+		
+		<script src="/lib/jquery/jquery-1.12.4.min.js"></script>
+		<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/js/common/header.js"></script>
+		<script src="/js/common/nav.js"></script>
+	</body>
+</html>
