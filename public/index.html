@@ -10,29 +10,27 @@
 	<body>
 		<!--头部导航提示条-->
 		<header></header>
-		
 		<!--时间提示框-->
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12 alert alert-info time">
-					<img src="images/time.png" alt="" />
-					<span>时间</span>
-				</div>
-			</div>
-		</div>
+		<div class="index-time"></div>
 		
-		<!--导航-->
-		<div class="nav-menu">
-			
-		</div>
+		<!--侧边导航-->
+		<div class="nav-menu"></div>
 		
 		<!--内容-->
-		<div class="content">
-			
+		<div class="aa">
+			<div class="right1 hidden have-login">
+				<h1>admin</h1>
+				<p>欢迎来到账单管理系统!</p>
+			</div>
+			<div class="right1 none-login">
+				<p class="p1">欢迎来到账单管理系统,请先登录！</p>
+			</div>
 		</div>
 		<script src="lib/jquery/jquery-1.12.4.min.js"></script>
 		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 		<script src="/js/common/header.js"></script>
 		<script src="/js/common/nav.js"></script>
+		<script src="/js/common/time.js"></script>
+		<script src="/js/common/remindlogin.js"></script>
 	</body>
 </html>

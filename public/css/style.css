@@ -50,5 +50,40 @@ a {
 	width: 180px;
 	text-align: center;
 }
+.tishi{
+	margin-left:840px;
+}
+.bgc{
+	background:#8bc93a;
+	font-size: 20px;
+}
+.login-in-info{
+	display: inline-block;
+	position: absolute;
+	top:9px;
+	right:51px;
+	font-size: 14px;
+}
+.login-in-info span{
+	margin-right: 15px;
+}
+.zhuxiao{
+	height:30px;
+	/*border:1px solid;*/
+	line-height: 30px;
+}
 
-
+.right1{
+	width:323px;
+	height: 200px;
+	/*border:1px solid;*/
+	float:right;
+	padding-left:100px;
+	margin-right:650px;
+	margin-top:40px;
+	background: url("/images/clock.jpg") no-repeat;
+}
+h1{color:#004276;}
+.p1{
+	margin-top:40px;
+}

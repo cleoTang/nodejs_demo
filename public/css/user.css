@@ -15,22 +15,17 @@ table thead th{
 .addUser{
 	position: absolute;
 	top:172px;
-	right:126px;
+	right:81px;
 	width:100px;
 	height:35px;
 	padding:0px;
-	
 }
 .addUser img{
 	padding-right:5px;
 }
-.warinfo{
-	position: absolute;
-	top:142px;
-	left:438px;
+.page-user{
+	margin-top: -200px;
 }
-.warinfo1{
-	position: absolute;
-	top:142px;
-	left:438px;
+.all-info{
+	cursor: pointer;
 }

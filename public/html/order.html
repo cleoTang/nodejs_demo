@@ -11,7 +11,8 @@
 	<body>
 		<!--头部-->
 		<header></header>
-		
+		<!--时间提示框-->
+		<div class="index-time"></div>
 		<!--内容-->
 		<div>
 			<!--侧边导航-->
@@ -20,7 +21,7 @@
 				<!--提示框-->
 				<div class="alert alert-info" role="alert">
 					<img src="/images/home.png" alt="" />
-					你现在所在的页面：</div>
+					你现在所在的页面：<span>账单管理界面</span></div>
 				<!--查询导航-->
 				<form class="form-inline">
 				  <div class="form-group">
@@ -35,10 +36,13 @@
 				    <label for="exampleInputEmail2">是否付款：</label>
 				   <input type="text" class="form-control" id="exampleInputName2" placeholder="请输入商品名称">
 				  </div>
-				  <button type="submit" class="btn btn-default">查询</button>
-				   <button type="submit" class="btn btn-default">添加订单</button>
+				 <button type="submit" class="btn btn-default">
+				  	<img src="/images/search.png" alt="" />
+				  	查询</button>
+				   
 				</form>
-				
+				<!--//添加用户-->
+				 <button type="submit" data-toggle="modal" data-target="#addModal" class="btn btn-default addUser"><img src="/images/tianjia.png" alt="" />添加订单</button>
 				<!--内容表格-->
 				
 				<!--内容表格-->
@@ -85,5 +89,6 @@
 		<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
 		<script src="/js/common/header.js"></script>
 		<script src="/js/common/nav.js"></script>
+		<script src="/js/common/time.js"></script>
 	</body>
 </html>
