@@ -8,6 +8,7 @@ $.extend(Password.prototype,{
 		$(".update-psw-a").addClass("active").siblings().removeClass("active");
 	},
 	addlister(){
+		//修改密码事件
 		$(".btn-update-psw").on("click",this.updatePsw);
 	},
 	updatePsw(){
@@ -29,17 +30,34 @@ $.extend(Password.prototype,{
 //			console.log(data);
 			$.post(url,data,(data)=>{
 				const id=data.res_body.data[0];
-				data=data.res_code;
-				if(!data){
+				const _id=data.res_body.data_id;
+				const user=data.res_body.data;
+//				console.log(data);
+				if(!data.res_code){
 					$(".warinfo1").removeClass("hidden");
 					setTimeout(function(){
 						$(".warinfo1").hide();
 					},1500);
 				}else{
 					const url="/api/user/update";
-					$.get(url,data,(data)=>{
-						console.log(data);
-					})
+					const FormData="password="+newpsw+"&username="+user.username+"&tell="+user.tell+"&sex="+user.sex+"&_id="+user._id;
+//					console.log(FormData);
+					$.ajax({
+						type:"get",
+						url,
+						data:FormData,
+						processData: false, // 不转换 data 向服务器提交的数据（默认是将对象转换为查询字符串）
+						contentType: false,
+						success(data){
+							//显示提示框
+							$("#test").modal("show");
+							$(".btn-login-new").on("click",function(){
+								//隐藏提示框 跳转到登录页面
+								$("#test").modal("hide");
+								window.location.href="/html/login.html");
+							});
+						}
+					});
 				}
 			});
 		}

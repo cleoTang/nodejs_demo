@@ -74,14 +74,26 @@ const UserService={
 	//修改用户信息
 	update(req,res,next){
 		//获取要修改的数据
-		const {username,sex,tell,_id}=req.query;
-		UserDao.update({_id},{username,sex,tell})
+		const {username,sex,tell,_id,password}=req.query;
+		if(!password){
+			UserDao.update({_id},{username,sex,tell})
 				.then((data)=>{
 					res.json({res_code:1,res_error:"",res_body:{data}});
 				})
 				.catch((err)=>{
 					res.json({res_code:0,res_error:err,res_body:{}});
 				});
+		}else{
+			const hash = bcrypt.hashSync(password, 10);
+			UserDao.update({_id},{password:hash,username,sex,tell})
+				.then((data)=>{
+					res.json({res_code:1,res_error:"修改成功",res_body:{data}});
+				})
+				.catch((err)=>{
+					res.json({res_code:0,res_error:err,res_body:{}});
+				});
+		}
+		
 	},
 	//登录
 	login(req,res,next){
@@ -121,17 +133,18 @@ const UserService={
 	},
 	//密码修改
 	psw(req,res,next){
-		const {password,newpassword,username}=req.body;
-		console.log({username});
+		const {password,username}=req.body;
+//		console.log({username});
 		UserDao.find({username})
 			.then((data)=>{
-				console.log(data);
+//				console.log(data);
 				if(data.length===1){
 					const user=data[0];
 					const b = bcrypt.compareSync(password, user.password);
 					//旧密码是正确的
 					if(b){
-							res.json({res_code:1,res_error:"",res_body:{data}});
+//							console.log(user);
+							res.json({res_code:1,res_error:"",res_body:{data:{_id:user._id,username:user.username,sex:user.sex,tell:user.tell}}});
 					}else{
 						res.json({res_code:0,res_error:"",res_body:{data}});
 					}

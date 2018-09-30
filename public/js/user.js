@@ -74,6 +74,7 @@ $.extend(Register.prototype,{
 		if(!isNaN(Number(page))){
 			index=page;	
 		}else if($(src).parent().hasClass("prev")){
+		
 			index=index-1;
 			if(index<1)index=1;
 		}else if($(src).parent().hasClass("next")){
