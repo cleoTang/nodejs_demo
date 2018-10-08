@@ -35,15 +35,21 @@ app.use(function(req,res,next){
 	//判断请求的资源的url
 	const {url}=req;
 	if(url.endsWith(".html") && url !="/"){
-		//访问其他的页面
+		if(url=="/html/login.html"){
+			next();
+		}
+		else{
+			//访问其他的页面
 		if(req.session.loginUser){
 			//已经有登录的用户的session
 			next();
 		}else{
 			//没有登录用户 跳转到首页
-			res.redirect("/");
+			res.redirect("/html/login.html");
 			return;
 		}
+		}
+		
 	}else{
 		next();
 	}
